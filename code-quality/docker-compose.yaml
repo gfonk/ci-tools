@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+  sonarqube:
+    build: .
+    container_name: sonarqubev512-server
+    environment:
+      SONARQUBE_JDBC_USERNAME: sonar
+      SONARQUBE_JDBC_PASSWORD: sonar
+      SONARQUBE_JDBC_URL: jdbc:mysql://mysql:3306/sonar?useUnicode=true&characterEncoding=utf8
+    depends_on:
+      - mysql
+    ports:
+      - "9000:9000"
+    links:
+      - mysql
+  mysql:
+    image: mysql:5.6
+    container_name: sonarqubev512-db
+    environment:
+      MYSQL_ROOT_PASSWORD: docker
+      MYSQL_USER: sonar
+      MYSQL_PASSWORD: sonar
+      MYSQL_DATABASE: sonar
+    ports:
+      - "3306:3306"
