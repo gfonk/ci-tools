@@ -1,4 +1,4 @@
-FROM sonarqube:5.1.2
+FROM sonarqube:5.6.2
 
 # assumptions
 # - plugins.tgz is the latest plugins download from current production instance
