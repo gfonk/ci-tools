@@ -15,7 +15,7 @@ services:
     links:
       - mysql
     #volumes:
-    #    - /opt/sonarsource/sonarqube-container-volume:/opt/sonarqube
+    #    - sonarqube-data:/opt/sonarqube
   mysql:
     image: mysql:5.6
     container_name: sonarqubev563-db
@@ -27,7 +27,9 @@ services:
     ports:
       - "3306:3306"
 
-
+# docker volume create --name=sonarqube-data
 #volumes:
-#  /opt/sonarsource/sonarqube-container-volume:
+#  sonarqube-data:
 #    external: true
+
+
