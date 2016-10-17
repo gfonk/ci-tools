@@ -3,12 +3,10 @@ version: '2'
 services:
   sonarqube:
     build: .
-    container_name: sonarqubev563-app
+    container_name: sonarqubev563-app-no-mysql
     environment:
       SONARQUBE_JDBC_USERNAME: sonar
       SONARQUBE_JDBC_PASSWORD: sonar
       SONARQUBE_JDBC_URL: jdbc:h2:tcp://localhost:9092/sonar
     ports:
       - "9000:9000"
-
-
