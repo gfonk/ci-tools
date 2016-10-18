@@ -17,6 +17,10 @@ To build and run the container
 ```
 $ cd <PATH>/ci-tools/code-quality
 $ docker-compose build
+
+You might need to run 
+$ docker login docker.io
+
 $ docker-compose up -d
 ```
 
